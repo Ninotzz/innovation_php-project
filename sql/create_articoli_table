@@ -1,0 +1,10 @@
+CREATE TABLE `innovation`.`articoli` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `titolo` VARCHAR(50) NOT NULL ,
+    `sottotitolo` VARCHAR(100) NULL ,
+    `autore` VARCHAR(20) NOT NULL ,
+    `corpo` VARCHAR(500) NOT NULL ,
+    `categoria` VARCHAR(50) NOT NULL ,
+    `data` DATE NOT NULL ,
+    `gdrive` text NULL,
+        PRIMARY KEY (`id`)) ENGINE = InnoDB;

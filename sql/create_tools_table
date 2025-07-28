@@ -1,0 +1,12 @@
+CREATE TABLE `innovation`.`tools` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `tipo` VARCHAR(50) NOT NULL ,
+    `nome` VARCHAR(50) NULL ,
+    `corpo` VARCHAR(8000) NOT NULL ,
+    `version` VARCHAR(15) NOT NULL ,
+    `data_version` DATE NOT NULL ,
+    `dev` VARCHAR(50) NOT NULL ,
+    `link_sito` VARCHAR(200) NOT NULL,
+    `autore` VARCHAR(50) NOT NULL,
+    `data_insert` DATE NOT NULL,
+        PRIMARY KEY (`id`)) ENGINE = InnoDB;
