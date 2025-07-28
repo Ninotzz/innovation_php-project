@@ -1,16 +1,16 @@
 # innovation
 
-Innovation & Technology Portal
+## Innovation & Technology Portal
 
 This project is a dynamic, database-driven web application built with PHP and MySQL. It functions as a small-scale Content Management System (CMS) focused on sharing articles and information about technology and innovation. The application features role-based user management, a secure authentication system, and a dedicated admin panel for managing users and content.
 
-About The Project
+### About The Project
 
 This web portal was developed to create a space where registered users can read articles on Innovation, Communication, and Technology (ICT). The site features a public-facing side with article previews and a private, members-only area where logged-in users can view full content.
 
 Administrators have extended privileges through a backend panel, allowing them to perform CRUD (Create, Read, Update, Delete) operations on users and articles, making content management simple and centralized.
 
-Key Features
+### Key Features
 
     Secure User Authentication: Complete login, logout, and session management functionality.
 
@@ -40,31 +40,31 @@ Key Features
 
     Database Initialization: A simple migration script (boot.php) creates the necessary database tables and populates them with a default admin user, streamlining the initial setup.
 
-Built With
+### Built With
 
-PHP
+- PHP
 
-MySQL
+- MySQL
 
-HTML5
+- HTML5
 
-CSS3
+- CSS3
 
-Getting Started
+### Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
-Prerequisites
+#### Prerequisites
 
 You will need a local server environment with PHP and MySQL. The most common stacks are:
 
-XAMPP (for Windows, macOS, Linux)
+- XAMPP (for Windows, macOS, Linux)
 
-MAMP (for macOS)
+- MAMP (for macOS)
 
-WAMP (for Windows)
+- WAMP (for Windows)
 
-Installation
+### Installation
 
 Clone the repository into your local server's root directory (e.g., htdocs in XAMPP).
     Bash
@@ -103,9 +103,9 @@ You're all set! Navigate to the project's homepage.
 
     http://localhost/innovation/index.php
 
-Usage
+### Usage
 
-Admin Access
+#### Admin Access
 
 Navigate to the login page: http://localhost/innovation/login.php.
 
@@ -113,7 +113,7 @@ Log in using the default admin credentials that were created by the sql/populate
 
 Upon successful login, you will be redirected to the Admin User Management panel (/admin.php).
 
-Regular User
+#### Regular User
 
 Navigate to the (un-provided) register.php page to create a new account.
 
@@ -121,7 +121,7 @@ Log in via the login.php page.
 
 You will be redirected to the homepage, where you can now browse and read the full versions of all articles.
 
-Code Snippets Showcase
+### Code Snippets Showcase
 
 Here are a few examples of the code logic from the project.
 
