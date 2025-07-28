@@ -77,8 +77,8 @@ function migrate($connection, array $migration_files) {
 
 /**
  * Questa funzione prende una stringa come parametro e versifica se ci sono caratteri speciali e li sostituisce con
- * codici in modo che il browser reinderizza il carattere in modo corrretto.
- * Il pattern è racchiuso da 2 deliitatori identificati da '/' o '#'.
+ * codici in modo che il browser reinderizzi il carattere in modo corretto.
+ * Il pattern è racchiuso da 2 delimitatori identificati da '/' o '#'.
  *
  * @param $text
  * @return mixed
