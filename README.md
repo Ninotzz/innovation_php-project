@@ -68,48 +68,62 @@ You will need a local server environment with PHP and MySQL. The most common sta
 
 - WAMP (for Windows)
 
-### Installation
+### Installation Guide ⚙️
 
-Clone the repository into your local server's root directory (e.g., htdocs in XAMPP).
+Clone the repository into your local server's web root directory (e.g., htdocs in XAMPP).
     Bash
 
     git clone https://github.com/your_username/your_repository.git
 
-Navigate to the project directory. The path will likely be htdocs/innovation.
+#### Set up the database connection:
 
-Create a MySQL database for the project using a tool like phpMyAdmin. Let's name it innovation_db.
+In the project folder, find the file database.example.php.
 
-Configure the database connection. Open the config/database.php file and update the connection variables with your database credentials.
-PHP
+Make a copy of this file and rename the copy to database.php.
 
-    <?php
-    $servername = "localhost";
-    $username = "root"; // Or your DB username
-    $password = ""; // Or your DB password
-    $dbname = "innovation_db"; // The database you created
+Open database.php and fill in your local MySQL database credentials (hostname, username, password, and database name).
 
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+#### Create the database:
 
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    ?>
+Using a tool like phpMyAdmin, create a new, empty database.
 
-Run the database migration script. Open your web browser and navigate to the boot.php file to initialize the database tables and create the default admin user.
+Ensure the name you choose matches the database name you entered in database.php.
 
-    http://localhost/innovation/boot.php
+#### Run the initial setup script:
 
-After running this script, you should see success messages for the table migrations. For security, you may want to delete or rename boot.php after the initial setup.
+Open your web browser and navigate to the boot.php script in your project directory. This will set up the essential utenti table and create a default administrator account.
 
-You're all set! Navigate to the project's homepage.
+    Go to: http://localhost/your_project_folder/boot.php
 
-    http://localhost/innovation/index.php
+You should see a success message on the screen. For security, it's a good practice to delete or rename boot.php after this step is complete.
+
+#### Log in as Admin:
+
+Navigate to the login page.
+
+Log in with the default admin credentials:
+
+Email: root@info.it 
+
+Password: admin 
+
+#### Run remaining database migrations:
+
+After logging in as the administrator, navigate to the migrations.php page in your browser.
+
+    Go to: http://localhost/your_project_folder/migrations.php
+
+You will see a checklist of available database scripts. Select the checkboxes for 
+
+    create_articoli_table, create_tools_table, populate_articoli_table, populate_utenti_table, and populate_tools_table to create the rest of the tables and fill them with sample data.
+
+Click the "Conferma" button to run them.
+
+All set! The application is now fully installed and configured. You can start exploring its features.
 
 ### Usage
 
-#### Admin Access
+#### Admin Access
 
 Navigate to the login page: http://localhost/innovation/login.php.
 
