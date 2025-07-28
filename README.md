@@ -42,13 +42,13 @@ Key Features
 
 Built With
 
-    PHP
+PHP
 
-    MySQL
+MySQL
 
-    HTML5
+HTML5
 
-    CSS3
+CSS3
 
 Getting Started
 
@@ -58,18 +58,18 @@ Prerequisites
 
 You will need a local server environment with PHP and MySQL. The most common stacks are:
 
-    XAMPP (for Windows, macOS, Linux)
+XAMPP (for Windows, macOS, Linux)
 
-    MAMP (for macOS)
+MAMP (for macOS)
 
-    WAMP (for Windows)
+WAMP (for Windows)
 
 Installation
 
-    Clone the repository into your local server's root directory (e.g., htdocs in XAMPP).
+Clone the repository into your local server's root directory (e.g., htdocs in XAMPP).
     Bash
 
-git clone https://github.com/your_username/your_repository.git
+    git clone https://github.com/your_username/your_repository.git
 
 Navigate to the project directory. The path will likely be htdocs/innovation.
 
@@ -93,13 +93,13 @@ PHP
     }
     ?>
 
-    Run the database migration script. Open your web browser and navigate to the boot.php file to initialize the database tables and create the default admin user.
+Run the database migration script. Open your web browser and navigate to the boot.php file to initialize the database tables and create the default admin user.
 
     http://localhost/innovation/boot.php
 
-    After running this script, you should see success messages for the table migrations. For security, you may want to delete or rename boot.php after the initial setup.
+After running this script, you should see success messages for the table migrations. For security, you may want to delete or rename boot.php after the initial setup.
 
-    You're all set! Navigate to the project's homepage.
+You're all set! Navigate to the project's homepage.
 
     http://localhost/innovation/index.php
 
@@ -107,19 +107,19 @@ Usage
 
 Admin Access
 
-    Navigate to the login page: http://localhost/innovation/login.php.
+Navigate to the login page: http://localhost/innovation/login.php.
 
-    Log in using the default admin credentials that were created by the sql/populate_utenti_table_admin.sql script.
+Log in using the default admin credentials that were created by the sql/populate_utenti_table_admin.sql script.
 
-    Upon successful login, you will be redirected to the Admin User Management panel (/admin.php).
+Upon successful login, you will be redirected to the Admin User Management panel (/admin.php).
 
 Regular User
 
-    Navigate to the (un-provided) register.php page to create a new account.
+Navigate to the (un-provided) register.php page to create a new account.
 
-    Log in via the login.php page.
+Log in via the login.php page.
 
-    You will be redirected to the homepage, where you can now browse and read the full versions of all articles.
+You will be redirected to the homepage, where you can now browse and read the full versions of all articles.
 
 Code Snippets Showcase
 
@@ -129,46 +129,46 @@ Admin Panel - User Management (admin.php)
 This snippet shows how the list of users is displayed and how forms are generated to allow admins to change user roles or delete users.
 PHP
 
-/* Stampo tutti gli utenti registrati */
-$sql = 'SELECT * FROM utenti';
-$result = mysqli_query($conn, $sql);
-
-while ($row = mysqli_fetch_assoc($result)) {
-    // ... extract user data ...
-    echo '
-          <tr>
-              <td>' . $id . '</td>
-              <td>' . $email . '</td>
-              // ... other cells ...
-              <td>
-                  <form action="admin.php" method="POST">
-                       <input type="hidden" name="id" value="' . $id . '">
-                       <input type="hidden" name="admin" value="' . $admin . '">
-                       <button type="submit" name="change_rule">
-                           <i class="far fa-edit"></i>
-                       </button>
-                  </form>
-              </td>
-              // ... delete form ...
-          </tr>';
-}
+    /* Stampo tutti gli utenti registrati */
+    $sql = 'SELECT * FROM utenti';
+    $result = mysqli_query($conn, $sql);
+    
+    while ($row = mysqli_fetch_assoc($result)) {
+        // ... extract user data ...
+        echo '
+              <tr>
+                  <td>' . $id . '</td>
+                  <td>' . $email . '</td>
+                  // ... other cells ...
+                  <td>
+                      <form action="admin.php" method="POST">
+                           <input type="hidden" name="id" value="' . $id . '">
+                           <input type="hidden" name="admin" value="' . $admin . '">
+                           <button type="submit" name="change_rule">
+                               <i class="far fa-edit"></i>
+                           </button>
+                      </form>
+                  </td>
+                  // ... delete form ...
+              </tr>';
+    }
 
 Article Page - Conditional Content (articolo.php)
 This shows how the application displays a short preview to guests and the full article content only to logged-in users.
 PHP
 
-/* Se la sessione è loggata allora mostro tutto il corpo e, se presente, il link, sennò solo la preview*/
-if ( isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
-    if ($gdrive) {
-        echo "<div class='divtesto'>
-                  <a target='_blank' href='$gdrive'>Link utile: $gdrive</a>
-             </div>";
+    /* Se la sessione è loggata allora mostro tutto il corpo e, se presente, il link, sennò solo la preview*/
+    if ( isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+        if ($gdrive) {
+            echo "<div class='divtesto'>
+                      <a target='_blank' href='$gdrive'>Link utile: $gdrive</a>
+                 </div>";
+            }
+        echo "<div class='testo'> $corpo </div>";
         }
-    echo "<div class='testo'> $corpo </div>";
-    }
-else {
-    echo" <div class='testo'>  $preview  </div>
-          <div class='testo'>
-              <p>Effettua il <a href='/innovation/login.php'>login</a> per visualizzare l'articolo completo</p>
-          </div>";
-    }
+    else {
+        echo" <div class='testo'>  $preview  </div>
+              <div class='testo'>
+                  <p>Effettua il <a href='/innovation/login.php'>login</a> per visualizzare l'articolo completo</p>
+              </div>";
+        }
