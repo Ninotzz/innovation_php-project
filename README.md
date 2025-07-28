@@ -4,6 +4,8 @@
 
 This project is a dynamic, database-driven web application built with PHP and MySQL. It functions as a small-scale Content Management System (CMS) focused on sharing articles and information about technology and innovation. The application features role-based user management, a secure authentication system, and a dedicated admin panel for managing users and content.
 
+---
+
 ### About The Project
 
 This web portal was developed to create a space where registered users can read articles on Innovation, Communication, and Technology (ICT). The site features a public-facing side with article previews and a private, members-only area where logged-in users can view full content.
@@ -40,7 +42,7 @@ Administrators have extended privileges through a backend panel, allowing them t
 
     Database Initialization: A simple migration script (boot.php) creates the necessary database tables and populates them with a default admin user, streamlining the initial setup.
 
-### Built With
+#### Built With
 
 - PHP
 
@@ -49,6 +51,8 @@ Administrators have extended privileges through a backend panel, allowing them t
 - HTML5
 
 - CSS3
+
+---
 
 ### Getting Started
 
@@ -120,6 +124,8 @@ Navigate to the (un-provided) register.php page to create a new account.
 Log in via the login.php page.
 
 You will be redirected to the homepage, where you can now browse and read the full versions of all articles.
+
+---
 
 ### Code Snippets Showcase
 
